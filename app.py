@@ -7,9 +7,9 @@ import os
 # -----------------------------
 # CONFIG
 # -----------------------------
-PHONE_NUMBER_ID = "YOUR_PHONE_NUMBER_ID"
-PERMANENT_TOKEN = "YOUR_PERMANENT_TOKEN"
-TO_NUMBER = "NUMBER_HERE"
+PHONE_NUMBER_ID = os.getenv("PHONE_NUMBER_ID")
+PERMANENT_TOKEN = os.getenv("PERMANENT_TOKEN")
+TO_NUMBER = os.getenv("TARGET_NUMBER")
 
 if not os.path.exists("uploads"):
     os.makedirs("uploads")
@@ -197,3 +197,4 @@ elif mode == "📤 Upload Files":
 
             st.success("All files sent to WhatsApp!")
             st.json(results)
+
